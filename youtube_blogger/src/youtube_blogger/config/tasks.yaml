@@ -1,0 +1,15 @@
+# Define Tasks
+task_summarize:
+  description: >
+    Summarize the given transcript that is {task_summarize} into a concise yet informative summary.
+  expected_output: >
+    A summarized version of the transcript capturing the main ideas and key points.
+  agent: summarizer
+
+task_write:
+  description: >
+    Convert the summary into a blog post with proper structure and flow.
+  expected_output: >
+    A well-formatted markdown blog post based on the summary.
+  agent: writer
+  context: [task_summarize]
